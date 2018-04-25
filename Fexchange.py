@@ -84,6 +84,8 @@ def rate():
 	elif request.method == 'POST':
 		convertor1=request.form.get('converter1')
 		convertor2=request.form.get('converter2')
+		if convertor1 == convertor2:
+			return redirect('/docrate')
 		temp=convertor2
 		convertor2=convertor2.strip()
 		convertor2=convertor2.split(' ')
